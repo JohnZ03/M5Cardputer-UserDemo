@@ -3,3 +3,4 @@
 - [ ] Able to mute speaker
 - [ ] Settings page (for whatever)
 - [ ] Battery voltage display toggle in Settings Page
+- [ ] Global volume(? or mute) in Settings Page
