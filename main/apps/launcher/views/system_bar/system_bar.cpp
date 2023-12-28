@@ -23,6 +23,8 @@
 #include "assets/wifi4.h"
 #include "assets/wifi5.h"
 
+#include <string>
+
 using namespace MOONCAKE::APPS;
 
 void Launcher::_start_system_bar()
@@ -59,7 +61,7 @@ void Launcher::_update_system_bar()
         _data.hal->canvas_system_bar()->setTextColor(THEME_COLOR_SYSTEM_BAR_TEXT);
         _data.hal->canvas_system_bar()->drawCenterString(
             _data.system_state.time.c_str(), 
-            _data.hal->canvas_system_bar()->width() / 2,
+            _data.hal->canvas_system_bar()->width() * 0.4,
             _data.hal->canvas_system_bar()->height() / 2 - FONT_HEIGHT / 2
         );
 
@@ -97,8 +99,15 @@ void Launcher::_update_system_bar()
         else if (_data.system_state.bat_state == 4)
             _data.hal->canvas_system_bar()->pushImage(x, y, 32, 16, image_data_bat4);
 
-
-
+        // Display battery voltage VBAT_IN
+        std::string batVoltageStr = std::to_string(_data.hal->getBatVoltage());
+        batVoltageStr = batVoltageStr.substr(0, batVoltageStr.find('.') + 3);
+        _data.hal->canvas_system_bar()->setTextColor(THEME_COLOR_SYSTEM_BAR_TEXT);
+        _data.hal->canvas_system_bar()->drawCenterString(
+            batVoltageStr.c_str(), 
+            _data.hal->canvas_system_bar()->width() * 0.7,
+            _data.hal->canvas_system_bar()->height() / 2 - FONT_HEIGHT / 2
+        );
 
 
         // Push 

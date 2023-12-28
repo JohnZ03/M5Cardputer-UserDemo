@@ -1,2 +1,5 @@
+- [x] Battery voltage display
+- [ ] Countdown timer
 - [ ] Able to mute speaker
 - [ ] Settings page (for whatever)
+- [ ] Battery voltage display toggle in Settings Page

@@ -54,6 +54,7 @@ namespace MOONCAKE
                 uint8_t wifi_state = 5;
                 // 1 ~ 4
                 uint8_t bat_state = 1;
+                float bat_voltage = 220;
                 std::string time = "12:34";
             };
 

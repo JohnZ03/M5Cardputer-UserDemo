@@ -80,5 +80,6 @@ namespace HAL
             virtual void playKeyboardSound() {}
 
             virtual uint8_t getBatLevel() { return 100; }
+            virtual float getBatVoltage() { return 220; }
     };
 }

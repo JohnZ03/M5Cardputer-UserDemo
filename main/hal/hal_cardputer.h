@@ -29,6 +29,7 @@ namespace HAL
             void playLastSound() override { _speaker->setVolume(32); _speaker->tone(6000, 20); }
             void playNextSound() override { _speaker->setVolume(64); _speaker->tone(7000, 20); }
             uint8_t getBatLevel() override;
+            float getBatVoltage() override;
 
         public:
             static void MicTest(HalCardputer* hal);

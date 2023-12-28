@@ -41,7 +41,7 @@ namespace MOONCAKE
 
         class AppCountdownTimer_Packer : public APP_PACKER_BASE
         {
-            std::string getAppName() override { return "COUNTDOWN_TIMER"; }
+            std::string getAppName() override { return "Countdown"; }
             void* getAppIcon() override { return (void*)(new AppIcon_t(image_data_countdown_timer_big, image_data_countdown_timer_small)); }
             void* newApp() override { return new AppCountdownTimer; }
             void deleteApp(void *app) override { delete (AppCountdownTimer*)app; }

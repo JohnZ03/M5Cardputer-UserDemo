@@ -141,8 +141,16 @@ uint8_t HalCardputer::getBatLevel()
     // return (uint8_t)getBatVolBfb((double)((adc_read_get_value() * 2 + 100) / 1000));
 
 
-    // https://docs.m5stack.com/zh_CN/core/basic_v2.7
-    double bat_v = static_cast<double>(adc_read_get_value()) * 2 / 1000;
+    // https://docs.m5stack.com/zh_CN/core/basic_v2.7 [inaccurate?]
+
+    // Here ADC reads from GPIO10 ranging from 2.5V to 0V
+    // VBAT_IN is calculated by ADC1 * 2 / 1000
+    // The actual battery controller is TP4057
+
+    // Cannot find the actual battery OCV data
+    // So as real computer engineers we read [battery voltage] instead
+
+    float bat_v = static_cast<float>(adc_read_get_value()) * 2 / 1000;
     spdlog::info("batV: {}", bat_v);
     uint8_t result = 0;
     if (bat_v >= 4.12)
@@ -156,6 +164,13 @@ uint8_t HalCardputer::getBatLevel()
     else
         result = 0;
     return result;
+}
+
+float HalCardputer::getBatVoltage()
+{
+    float bat_v = static_cast<float>(adc_read_get_value()) * 2 / 1000;
+    spdlog::info("batV: {}", bat_v);
+    return bat_v;
 }
 
 
