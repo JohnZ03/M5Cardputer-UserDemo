@@ -1,0 +1,2 @@
+- [ ] Able to mute speaker
+- [ ] Settings page (for whatever)
