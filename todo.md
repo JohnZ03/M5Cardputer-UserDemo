@@ -4,3 +4,5 @@
 - [ ] Settings page (for whatever)
 - [ ] Battery voltage display toggle in Settings Page
 - [ ] Global volume(? or mute) in Settings Page
+- [ ] Tomato Clock
+- [ ] Web Radio (idea from https://github.com/cyberwisk/M5Cardputer_WebRadio)
