@@ -24,7 +24,7 @@ void Launcher::_port_wait_enter()
 {   
     // delay(600);
 
-    _data.hal->Speaker()->setVolume(255);
+    _data.hal->Speaker()->setVolume(25);
     // bool shit = false;
 
     _data.hal->keyboard()->updateKeyList();
