@@ -19,3 +19,4 @@
 #include "app_timer/app_timer.h"
 #include "app_keyboard/app_keyboard.h"
 #include "app_countdown_timer/app_countdown_timer.h"
+#include "app_texteditor/app_texteditor.h"
